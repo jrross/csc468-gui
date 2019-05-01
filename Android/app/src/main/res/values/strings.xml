@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Adventure Ross Jeffrey</string>
+    <string name="play_again">Play Again</string>
+    <string name="ross">Ross</string>
+    <string name="score">Score: 0</string>
+    <string name="choose_player">Choose Player</string>
+    <string name="score_filled">Score: %1$d</string>
+    <string name="circle">Circle</string>
+    <string name="square">Square</string>
+</resources>
