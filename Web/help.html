@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title> MP3 Maker </title>
+  <link href="lib/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <ul>
+    <li><a href="main.php">Main page</a></li>
+    <li><a href="files.php">Files</a></li>
+    <li><a href="help.html">Help</a></li>
+  </ul>
+  <h1>CSS Modifications</h1>
+  <p>All CSS modifications are handled in lib/style.css. This file handles all
+     of the pages for the project. The required changes in CSS can be seen in
+     the grey background in all of the pages, the black headers as seen above,
+     and the change in span can be seen on the main page next to "Current note"
+     and "Current length", the text here will appear yellow. Additionally the 
+     navigation bar is styled as the black bar accross the top.</p>
+  <h1>Application Use</h1>
+  <h3>Main Page</h3>
+  <p>The top row of buttons are used to change which note is to be added next,
+     pressing one of these buttons will assign the current note (displayed
+	 lower on the page) to be the pitch of the corresponding button. The note
+	 length box can be filled in to indicate what length of note (in seconds)
+	 the note should play for. Upon pressing the "Set" button, the current
+	 length will be set to the value contained in the note length box. Confirm
+	 note will take the values within current note, and current length, and put
+	 them on the bars below as the most recent note in the sequence. The undo
+	 button will undo the most recent action taken and continue down the most
+	 recent actions with repetitive clicks. Pressing the redo button will do
+	 the opposite and redo the most recent actions. However the list of redo
+	 actions will be cut off and restarted upon adding a new action. Supported
+	 actions for undo/redo are adding a new note to the bars below, changing
+	 the current note, and changing the current length. The save button will
+	 save the entire song to a file that can be accessed from the file page.
+	 Upon pressing it, a prompt will show to take the name of the file to save
+	 as. If cancel is hit or the name is blank, it will not save. Play will
+	 play the entire sequence of notes as depicted below on the bars.</p>
+  <h3>File Page</h3>
+  <p>This page will display all the files that are available to be used. Files
+     are to be made on the mainpage, when saved they will be stored here. There
+	 is no limit to the number of files which can be used. Each file as displayed
+	 on the page has 3 actions that can be used. Load will take the file, and load
+	 its contents and take it back over to the main page, with all of the
+	 notes loaded and available. However, when loading a file, undo will not 
+	 be available for any of the notes that were loaded in, only notes added
+	 thereafter. The download button will download the song in a file format
+	 which can be used later. The X option will delete the file from the server,
+	 this action is irreversable. The upload option will allow the user to upload
+	 a file containing a song that is not on the server to the list of songs on
+	 the page. Note: a file must be chosen before using the upload button. Only
+	 files in the format as downloaded will be able to be correctly played.</p>
+  <h1>Application Limitations</h1>
+  <p>All the expected functionality is working properly. Limitations in the
+     usage of the application will come from any invalid input. Most of the 
+	 functionality expects valid input and doesn't check for invalid input.
+	 The places where these issues will show up are in the note length field
+	 on the main page, where it does no checking to ensure that the entry is
+	 a number between 0.1 and 5, inputting any information outside of this
+	 may cause issues. The confirm note button on the main page also does no
+	 checking in the current implementation, so it must be ensured that both
+	 note and length are entered, it will accept them even if they are not
+	 populated. The upload functionality on the Files tab does no checking to
+	 ensure that the file is a valid format, so it must be ensured that any
+	 file uploaded is a valid file format (as produced by the site).</p>
+  <h1>Extensions</h1>
+  <h3>1.a. Show a note on a music bar line image instead of the letter</h3>
+  <p>This is done on the main page. The music bar line is dynamic and adjusts
+     as the length of the song increases, although it will stick to a preset
+	 length in the case it is below a set threshhold. This works with the undo
+	 redo pattern. Testing for this can be done by placing each note and ensuring
+	 it goes in the desired location. A full range.txt is included under the files
+     tab with this test already written and ready. Additionally other tests can be
+	 performed to ensure that longer songs are still accurately represented once
+	 going past the preset threshhold length.</p>
+  <h3>1.b. Show a note image relating the length of the sound</h3>
+  <p>This takes the previous step a bit further. The horizontal lengths of the notes
+     depict how long the note is played for, the longer it is played for, the longer
+	 the rectangle. This can be tested by putting in varying length notes and checking
+	 visually that longer length notes are longer than shorter length notes. An example
+	 length test.txt file is available to showcase this feature.</p>
+  <h3>1.c. Style the buttons</h3>
+  <p>All buttons in the entire project have the same style applied to them. There are
+     no real tests for this, other than to visually verify the buttons are styled.
+	 buttons are a dark grey with white text, and turn black when hovered.</p>
+  <h3>1.d. Show the notes being played, as the song is played</h3>
+  <p>While a note is playing, its note corresponding note on the bar will be colored
+     yellow while it plays. The note returns to black when it is finished playing.
+	 This can be tested using entire songs to ensure the proper notes change colors at
+	 the proper times. Any of the provided files already on the site can be used to
+	 verify this. full range.txt to verify it works for various pitches, and length 
+	 test.txt can be used to verify it works properly with varying length notes.</p>
+<body>
+</html>
